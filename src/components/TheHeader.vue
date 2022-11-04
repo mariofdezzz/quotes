@@ -2,18 +2,27 @@
 import { useQuotesStore } from '@/stores/quotes'
 import { Icon } from '@iconify/vue'
 import { storeToRefs } from 'pinia'
+import { useRoute, useRouter } from 'vue-router'
+
+const route = useRoute()
+const router = useRouter()
 
 const quotesStore = useQuotesStore()
 const { loading: loadingQuote } = storeToRefs(quotesStore.random)
+
+function getRandomQuote() {
+  if (route.name !== 'home') {
+    router.push({ name: 'home' })
+  }
+
+  quotesStore.random.get()
+}
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <button
-        :class="{ loading: loadingQuote }"
-        @click="quotesStore.random.get()"
-      >
+      <button :class="{ loading: loadingQuote }" @click="getRandomQuote">
         <span> random </span>
 
         <Icon icon="material-symbols:autorenew" />
