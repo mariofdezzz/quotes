@@ -14,7 +14,9 @@ const lastQuote = ref(null)
 const quotesStore = useQuotesStore()
 const { quotes, loading } = storeToRefs(quotesStore)
 
-onMounted(() => {
+onMounted(async () => {
+  await quotesStore.get({ author })
+
   useIntersectionObserver(lastQuote, ([{ isIntersecting }]) => {
     if (isIntersecting) quotesStore.get({ author })
   })

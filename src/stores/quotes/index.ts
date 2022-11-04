@@ -26,6 +26,7 @@ export const useQuotesStore = defineStore('quotes', {
       ) {
         this.author = author
         this.page = INITIAL_PAGE
+        this.quotes = []
       }
 
       if (this.totalPages !== undefined && this.page > this.totalPages)
@@ -40,8 +41,7 @@ export const useQuotesStore = defineStore('quotes', {
 
       this.loading = false
 
-      if (this.page > 1) this.quotes.push(...quotes)
-      else this.quotes = quotes
+      this.quotes.push(...quotes)
 
       return this.quotes
     },
