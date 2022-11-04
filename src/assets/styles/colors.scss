@@ -1,0 +1,12 @@
+:root {
+  --bg: hwb(0 100% 0%);
+  --on-bg: hwb(231 36% 52%);
+  --on-bg-disabled: hwb(230 82% 11%);
+  --primary: hsl(3, 74%, 60%);
+  --primary-gradient: linear-gradient(
+    45deg,
+    hwb(38 4% 4%) 0%,
+    hwb(333 16% 14%) 100%
+  );
+  --secondary: hwb(47 28% 0%);
+}
