@@ -46,7 +46,6 @@ const { loading: loadingQuote } = storeToRefs(quotesStore)
       color: $primary;
 
       span {
-        color: transparent;
         background: $primary-gradient;
         background-clip: text;
         -webkit-background-clip: text;

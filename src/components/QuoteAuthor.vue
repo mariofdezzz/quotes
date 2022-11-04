@@ -34,16 +34,4 @@ h3 {
   font-size: 1em;
   font-weight: normal;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    background: $primary-gradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
 </style>
