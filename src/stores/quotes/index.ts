@@ -2,14 +2,15 @@ import { QuotesApi } from '@/apis'
 import type { GetParams } from '@/apis/quotes/types/getParams'
 import type { Quote } from '@/apis/quotes/types/quote'
 import { defineStore } from 'pinia'
-import type { State } from './types/state'
+import { useRandomQuoteStore } from './random'
+import type { QuoteState } from './types/quoteState'
 
 const api = new QuotesApi()
 
 export const useQuotesStore = defineStore('quotes', {
-  state: (): State => ({
+  state: (): QuoteState => ({
     quotes: [],
-    random: undefined,
+    random: useRandomQuoteStore(),
     loading: false,
   }),
   actions: {
@@ -22,16 +23,6 @@ export const useQuotesStore = defineStore('quotes', {
       this.loading = false
       this.quotes = quotes
       return quotes
-    },
-    async getRandom() {
-      this.loading = true
-
-      const { data: response } = await api.getRandom()
-      const quote = response.data[0]
-
-      this.loading = false
-      this.random = quote
-      return quote
     },
   },
 })

@@ -5,10 +5,10 @@ import { useQuotesStore } from '@/stores/quotes'
 import Quote from '@/components/Quote.vue'
 
 const quotesStore = useQuotesStore()
-const quote = storeToRefs(quotesStore).random
+const quote = storeToRefs(quotesStore.random).quote
 
 onMounted(() => {
-  if (quote?.value === undefined) quotesStore.getRandom()
+  if (quote?.value === undefined) quotesStore.random.get()
 })
 </script>
 

@@ -1,7 +1,6 @@
 import type { Quote } from '@/apis/quotes/types/quote'
 
-export interface State {
-  quotes: Quote[]
-  random?: Quote
+export interface RandomQuoteState {
+  quote?: Quote
   loading: boolean
 }

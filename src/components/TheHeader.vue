@@ -4,7 +4,7 @@ import { Icon } from '@iconify/vue'
 import { storeToRefs } from 'pinia'
 
 const quotesStore = useQuotesStore()
-const { loading: loadingQuote } = storeToRefs(quotesStore)
+const { loading: loadingQuote } = storeToRefs(quotesStore.random)
 </script>
 
 <template>
@@ -12,7 +12,7 @@ const { loading: loadingQuote } = storeToRefs(quotesStore)
     <div class="wrapper">
       <button
         :class="{ loading: loadingQuote }"
-        @click="quotesStore.getRandom()"
+        @click="quotesStore.random.get()"
       >
         <span> random </span>
 
