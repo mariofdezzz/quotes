@@ -3,16 +3,21 @@ import QuoteText from '@/components/QuoteText.vue'
 import { useQuotesStore } from '@/stores/quotes'
 import { Icon } from '@iconify/vue'
 import { storeToRefs } from 'pinia'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import { useIntersectionObserver } from '@vueuse/core'
+import LoadingSpinner from '@/components/LoadingSpinner.vue'
 
 const author = useRoute().params.author as string
 
+const lastQuote = ref(null)
 const quotesStore = useQuotesStore()
-const quotes = storeToRefs(quotesStore).quotes
+const { quotes, loading } = storeToRefs(quotesStore)
 
 onMounted(() => {
-  quotesStore.get({ author })
+  useIntersectionObserver(lastQuote, ([{ isIntersecting }]) => {
+    if (isIntersecting) quotesStore.get({ author })
+  })
 })
 </script>
 
@@ -34,6 +39,10 @@ onMounted(() => {
         :key="idx"
         :text="quote.quoteText"
       />
+
+      <LoadingSpinner v-if="loading" />
+
+      <div ref="lastQuote"></div>
     </div>
   </section>
 </template>

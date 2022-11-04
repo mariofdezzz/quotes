@@ -1,4 +1,5 @@
 import { QuotesApi } from '@/apis'
+import type { Quote } from '@/apis/quotes/types/quote'
 import { defineStore } from 'pinia'
 import type { RandomQuoteState } from './types/randomQuoteState'
 
@@ -10,7 +11,7 @@ export const useRandomQuoteStore = defineStore('randomQuote', {
     loading: false,
   }),
   actions: {
-    async get() {
+    async get(): Promise<Quote> {
       this.loading = true
 
       const { data: response } = await api.getRandom()
