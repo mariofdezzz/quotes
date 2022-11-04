@@ -1,46 +1,69 @@
-# quotes
+<h1 align="center">Quotes</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+<div align="center">
+   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+</div>
 
-## Recommended IDE Setup
+<div align="center">
+  <h3>
+    <a href="https://quotes.mariofdezzz.com/">
+      Demo
+    </a>
+    <span> | </span>
+    <a href="https://devchallenges.io/solutions/30E0pvJiL4VUFA3wywey">
+      Solution
+    </a>
+    <span> | </span>
+    <a href="https://devchallenges.io/challenges/8Y3J4ucAMQpSnYTwwWW8">
+      Challenge
+    </a>
+  </h3>
+</div>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<!-- TABLE OF CONTENTS -->
 
-## Type Support for `.vue` Imports in TS
+## Table of Contents
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- [Overview](#overview)
+  - [Built With](#built-with)
+- [Features](#features)
+- [How to use](#how-to-use)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+<!-- OVERVIEW -->
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Overview
 
-## Customize configuration
+![screenshot](https://user-images.githubusercontent.com/47794126/200090088-e671b30d-005d-42d8-ba08-b9d9411e6668.png)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Built With
 
-## Project Setup
+- [Vue.js](https://vuejs.org/)
+- [Pinia](https://pinia.vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [VueUse](https://vueuse.org/)
+- [Iconify](https://iconify.design/)
+- [Axios](https://axios-http.com/)
 
-```sh
-npm install
-```
+## Features
 
-### Compile and Hot-Reload for Development
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/8Y3J4ucAMQpSnYTwwWW8) was to build an application to complete the given user stories.
 
-```sh
-npm run dev
-```
+- User story: I can see a random quote
+- User story: I generate a new random quote
+- User story: When I select quote author, I can see a list of quotes from them
+- User story: I can see quote genre under the author
 
-### Type-Check, Compile and Minify for Production
+## How To Use
 
-```sh
-npm run build
-```
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-### Lint with [ESLint](https://eslint.org/)
+```bash
+# Clone this repository
+$ git clone https://github.com/your-user-name/your-project-name
 
-```sh
-npm run lint
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm run dev
 ```
