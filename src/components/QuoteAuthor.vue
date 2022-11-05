@@ -34,4 +34,36 @@ h3 {
   font-size: 1em;
   font-weight: normal;
 }
+
+$time: 1s;
+.quote-enter-active {
+  & div {
+    animation: fade $time reverse;
+  }
+}
+
+.quote-leave-active {
+  & div {
+    animation: fade $time;
+  }
+}
+
+.quote-enter-from,
+.quote-leave-to {
+  & div {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 </style>

@@ -11,9 +11,9 @@ const quotesStore = useQuotesStore()
 const { loading: loadingQuote } = storeToRefs(quotesStore.random)
 
 function getRandomQuote() {
-  if (route.name !== 'home') {
-    router.push({ name: 'home' })
-  }
+  if (loadingQuote.value) return
+
+  if (route.name !== 'home') router.push({ name: 'home' })
 
   quotesStore.random.get()
 }

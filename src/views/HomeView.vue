@@ -14,7 +14,9 @@ onMounted(() => {
 
 <template>
   <section>
-    <Quote :quote="quote" />
+    <Transition name="quote" mode="out-in">
+      <Quote :key="quote?.quoteText" :quote="quote" />
+    </Transition>
   </section>
 </template>
 
@@ -24,5 +26,12 @@ section {
   height: 100%;
   display: grid;
   place-items: center;
+}
+</style>
+
+<style>
+.quote-enter-active,
+.quote-leave-active {
+  transition: opacity 1s;
 }
 </style>
